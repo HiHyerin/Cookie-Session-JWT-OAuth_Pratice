@@ -1,2 +1,2 @@
 # CookiePratice
-# 회원가입 쿠키 연습
+# 회원가입,로그인 쿠키, 세션, jwt, oauth 연습
