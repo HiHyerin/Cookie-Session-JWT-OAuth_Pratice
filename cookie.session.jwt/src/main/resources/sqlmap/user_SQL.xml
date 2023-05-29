@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hk.csj.mapper.UserMapper">
+	<insert id="saveUser" parameterType="com.hk.csj.vo.UserVO">
+        <![CDATA[
+        INSERT INTO TB_USER
+        (userId, userPw, userName, userAuth, appendDate, updateDate)
+        VALUES(#{userId},#{userPw},#{userName},#{userAuth},#{appendDate},#{updateDate});
+        ]]>
+    </insert>
+    
+    <select id="loginUser" parameterType="String" resultType="com.hk.csj.vo.UserVO">
+    	<![CDATA[
+    	select *
+    	FROM TB_USER
+    	WHERE userId=#{userId};
+    	]]>
+    </select>
+</mapper>
+<!-- 
+id
+@Mapper에서 정의한 이름을 동일하게 맞춰줘야 한다.
+
+parameterType
+파라미터의 자료형을 넣어준다 -->
